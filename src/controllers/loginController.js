@@ -24,7 +24,7 @@ exports.loginUser = async(req,res) => {
                 const token = jwt.sign(payload, secretKey, {expiresIn:"1h"})
                 res.cookie('Login_token', token, {
                     httpOnly:true,
-                    secure:false,
+                    secure:true,
                     maxAge:86400000,
                 })
                 return res.status(200).json({msg:"Usuario logueado"})

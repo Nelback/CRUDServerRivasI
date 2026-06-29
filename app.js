@@ -6,7 +6,7 @@ const PORT = 3000
 const loginRoute = require("./src/routes/loginRoute")
 const getRoutes = require("./src/routes/getRoutes")
 const cors = require("cors")
-app.use(cors({origin:"http://localhost:3001", methods:['GET', 'POST', 'DELETE', 'PUT'], credentials:true,}))
+app.use(cors({origin:"https://crud-client-rivas.vercel.app", methods:['GET', 'POST', 'DELETE', 'PUT'], credentials:true,}))
 app.use(cookieParser())
 app.use(express.json())
 
