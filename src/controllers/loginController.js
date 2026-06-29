@@ -62,7 +62,10 @@ exports.validateUser = (req,res) =>{
 exports.logout = (req,res) => {
     
     try {
-    res.clearCookie('Login_token', {path:'/'})
+    res.clearCookie('Login_token', {path:'/', httpOnly:true,
+                    secure:true,
+                    sameSite:'none',
+                    maxAge:86400000,})
     return res.status(200).json({msg:'Sesion cerrada exitosamente'})  
     } catch (error) {
         console.error(error)
