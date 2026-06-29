@@ -55,7 +55,7 @@ exports.validateUser = (req,res) =>{
 
     } catch (error) {
         console.error("no es valida la cookie")
-        return res.status(401)
+        return res.status(401).json({msg:"no es valida la cookie"})
     }
 }
 
