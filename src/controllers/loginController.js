@@ -20,7 +20,7 @@ exports.loginUser = async(req,res) => {
     const findUser = data.find(u => u.Usuario === dato.usuario)
         if(findUser) {
             if (findUser.password === dato.pass){
-                const payload = findUser
+                const payload = {id:findUser.id, Usuario:findUser.Usuario, rol:findUser.rol}
                 const token = jwt.sign(payload, secretKey, {expiresIn:"1h"})
                 res.cookie('Login_token', token, {
                     httpOnly:true,
