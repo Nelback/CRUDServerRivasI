@@ -9,6 +9,7 @@ const cors = require("cors")
 app.use(cors({origin:"https://crud-client-rivas.vercel.app", methods:['GET', 'POST', 'DELETE', 'PUT'], credentials:true,}))
 app.use(cookieParser())
 app.use(express.json())
+app.set('trust proxy', 1);
 
 
 

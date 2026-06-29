@@ -25,6 +25,7 @@ exports.loginUser = async(req,res) => {
                 res.cookie('Login_token', token, {
                     httpOnly:true,
                     secure:true,
+                    sameSite:'none',
                     maxAge:86400000,
                 })
                 return res.status(200).json({msg:"Usuario logueado"})
